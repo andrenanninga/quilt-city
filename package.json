@@ -1,0 +1,31 @@
+{
+  "name": "quilt-city",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:andrenanninga/quilt-city.git",
+  "author": "André Nanninga <andre@nannin.ga>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "deploy": "now deploy"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "next": "^9.1.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-spring": "^8.0.27",
+    "react-use-gesture": "^6.0.12",
+    "request": "^2.88.0",
+    "vec-la": "^1.5.0"
+  },
+  "devDependencies": {
+    "@now/node": "^1.0.2",
+    "@types/node": "^12.11.5",
+    "@types/react": "^16.9.9",
+    "typescript": "^3.6.4"
+  }
+}
