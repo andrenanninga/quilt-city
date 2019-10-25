@@ -17,7 +17,8 @@ const Map = () => {
 
   useEffect(() => {
     const newTiles = [];
-    const loadedTiles = tiles.map(tile => tile.position.join("/"));
+    const activeTiles = tiles.slice(-40);
+    const loadedTiles = activeTiles.map(tile => tile.position.join("/"));
 
     for (let row = 0; row < rows; row++) {
       for (let column = 0; column < columns; column++) {
@@ -33,7 +34,7 @@ const Map = () => {
       }
     }
 
-    setTiles([...tiles.slice(-100), ...newTiles]);
+    setTiles([...activeTiles, ...newTiles]);
   }, [columns, rows, x, y]);
 
   const bind = useGesture(
@@ -59,6 +60,7 @@ const Map = () => {
       ref={ref}
       css={css`
         height: 600px;
+        background-color: #f1f0e4;
         position: relative;
         overflow: hidden;
         border: 2px solid green;
@@ -77,10 +79,9 @@ const Map = () => {
             key={tile.position.join("/")}
             style={{
               position: "absolute",
-              transform: `translate(${tile.position[0] * 256 - 256}px, ${tile
-                .position[1] *
-                256 -
-                256}px)`
+              transform: `translate(
+                  ${tile.position[0] * 256 - 256}px,
+                  ${tile.position[1] * 256 - 256}px)`
             }}
           />
         ))}
